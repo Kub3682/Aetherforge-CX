@@ -1,0 +1,39 @@
+name: Sphinx Docs CICD # 工作流名称，自定义
+
+on:
+  push:
+    branches: [main] # 监听 main 分支的 push 事件，代码提交到 main 就触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 使用 GitHub 提供的 Ubuntu 虚拟环境
+
+    steps:
+      # 步骤 1：拉取 GitHub 仓库代码到虚拟环境
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 步骤 2：安装 Python + Sphinx 依赖
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11 # 指定 Python 版本，和本地一致
+
+      - name: Install dependencies
+        run: |
+          pip install sphinx  # 安装 Sphinx  
+          # 如果有其他依赖（如主题），也可在此安装，比如：  
+          # pip install sphinx-rtd-theme
+
+      # 步骤 3：构建 Sphinx 文档（生成 HTML）
+      - name: Build Sphinx docs
+        run: make html # 执行 Sphinx 构建命令，生成 _build/html
+
+      # 步骤 4：部署到 GitHub Pages（自动发布文档）
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub 自动提供的权限令牌
+          publish_dir: ./_build/html # 要部署的文档目录（Sphinx 生成的 HTML 所在位置）
+          # 可选：指定部署分支（默认是 gh-pages）
+          # destination_dir: docs
