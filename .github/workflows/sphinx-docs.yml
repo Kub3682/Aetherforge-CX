@@ -8,7 +8,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    # 把 permissions 提到 job 层级，作用于整个任务
+    permissions:
+      pages: write # 允许修改 GitHub Pages 相关权限
+      id-token: write # 用于增强权限（如 OIDC 相关，v4 插件配合使用）
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,12 +31,9 @@ jobs:
         run: make html # 生成 _build/html
 
       - name: Deploy to GitHub Pages
-        # 升级到 v4，支持 permissions
+        # 升级到 v4，支持权限配置（结合 job 层级 permissions 生效）
         uses: peaceiris/actions-gh-pages@v4
         with:
-          # 改用个人令牌（更稳定）
+          # 改用个人令牌（需在仓库 Secrets 中配置 PERSONAL_ACCESS_TOKEN）
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./_build/html
-        permissions:
-          pages: write # 允许修改 Pages
-          id-token: write # 增强权限（v4 需配合）
