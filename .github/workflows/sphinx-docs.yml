@@ -38,6 +38,6 @@ jobs:
           # 可选：指定部署分支（默认是 gh-pages）
           # destination_dir: docs
           # 新增！给 GITHUB_TOKEN 推送代码的权限
-        permissions:
+          permissions:
           pages: write # 允许修改 GitHub Pages
           id-token: write # 允许生成 OIDC 令牌（可选，增强权限）
