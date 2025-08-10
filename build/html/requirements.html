@@ -15,7 +15,7 @@
     <script src="_static/translations.js?v=beaddf03"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="prev" title="Aetherforge documentation" href="index.html" />
+    <link rel="prev" title="Aetherforge Project Documentation" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -36,12 +36,120 @@
   <section id="id1">
 <h1>需求文档总览<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
 <section id="id2">
-<h2>功能需求<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<h2>用户故事与价值细化<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>手冲参数记录：支持录入粉量（g）、水温（℃）、注水阶段描述、萃取时间（秒）、冲煮日期等字段</p></li>
-<li><p>数据管理：支持单条记录的新增、修改、删除，支持按日期/参数维度查询</p></li>
-<li><p>数据导出：支持导出 Excel 格式，单次导出最大 1000 条（与你现有需求呼应）</p></li>
+<li><p>用户价值目标：帮助用户充分理解一款咖啡豆（生豆即处理特性，烘焙特性），以及用户已有的器具特性，综合能够收敛出一套参数，稳定输出用户满意的几种口感体验；</p></li>
+<li><p>打开UI界面，默认咖啡豆（提前配置好近期使用的咖啡豆），系统显示今日日期，以及当前咖啡豆新鲜度等信息，提醒最佳日期；</p></li>
+<li><p>默认器具（提前配置好已有咖啡设备信息），系统显示使用时间，使用次数等信息，提醒当前一杯自制手冲咖啡的分摊成本情况；</p></li>
+<li><p>开始新的手冲</p></li>
+<li><ul>
+<li><p>本次咖啡豆重量信息输入；</p></li>
 </ul>
+</li>
+<li><ul>
+<li><p>本次研磨粒度信息输入；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>本次咖啡粉重量信息输入；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>本次水粉比信息输入（自动计算出理论注水量数值）；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>本次注水手法方式规划描述；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>本次注水温度信息输入；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>本次注水手法方式实际描述；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>本次萃取时间信息输入；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>萃取结束后咖啡液温度信息输入；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>咖啡液口味口感描述；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>咖啡饮品调配即口味口感描述。</p></li>
+</ul>
+</li>
+<li><p>一键保存本次手冲体验，并命名（后续方便通过命名来选择新的手冲参数的参考初始值）。</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>功能需求<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>配置咖啡豆信息，并命名，可编辑多次修改</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><ul>
+<li><p>需记录的信息：产地、烘焙、批次、包装等；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>用户可以自己增加属性，以及属性对应的描述</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>配置设备信息，并命名，可编辑多次修改</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><ul>
+<li><p>需记录的信息：品牌、容量（杯、mL/g）；</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>用户可以自己增加属性，以及属性对应的描述</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>配置单次手冲体验，并命名</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><ul>
+<li><p>需自动同步记录信息：当前日期、咖啡豆信息，设备信息</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>用户需要输入信息：</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>咖啡豆重量，研磨粒度，咖啡粉重量，水粉比，注水手法规划，注水温度</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>实际注水手法，萃取时间，咖啡液温度，咖啡液口味口感，咖啡饮品调配口味口感</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>下拉选择已有配置：某种咖啡豆信息（自动计算新鲜度），某套设备信息（自动计算使用次数和分摊成本），以及某次手冲体验参数（作为基础参数信息）</p></li>
+<li><p>保存、管理所有数据（包括数据库备份）</p></li>
+</ol>
+</div></blockquote>
 <p>性能需求</p>
 <ul class="simple">
 <li><p>性能：登录验证响应≤2秒（参考现有性能需求）、数据查询（单表）响应≤3秒</p></li>
@@ -65,7 +173,6 @@
 </tr>
 </tbody>
 </table>
-<p>更多细节参考 <span class="xref std std-doc">design_spec</span> ，接口规范见 <a class="reference external" href="https://example.com/api-doc">API 文档</a></p>
 </div></blockquote>
 </section>
 </section>
@@ -99,7 +206,8 @@
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">需求文档总览</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">功能需求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">用户故事与价值细化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">功能需求</a></li>
 </ul>
 </li>
 </ul>
@@ -108,7 +216,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="上一章">Aetherforge documentation</a></li>
+      <li>Previous: <a href="index.html" title="上一章">Aetherforge Project Documentation</a></li>
   </ul></li>
 </ul>
 </div>
