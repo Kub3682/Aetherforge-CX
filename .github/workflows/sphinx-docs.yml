@@ -36,4 +36,4 @@ jobs:
         with:
           # 改用个人令牌（需在仓库 Secrets 中配置 PERSONAL_ACCESS_TOKEN）
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          publish_dir: ./_build/html
+          publish_dir: ./build/html
