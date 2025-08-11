@@ -1,0 +1,83 @@
+/* 自定义表格样式 */
+table.docutils {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table.docutils th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+table.docutils td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+}
+
+table.docutils tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* 调整标题间距 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 增强代码块样式 */
+div.highlight {
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  margin: 1rem 0;
+}
+
+/* 调整段落间距 */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* 列表样式优化 */
+ul,
+ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* 强调文本样式 */
+.emphasis {
+  font-style: italic;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+/* 定义列表样式 */
+dl {
+  margin-bottom: 1.5rem;
+}
+
+dt {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+dd {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}

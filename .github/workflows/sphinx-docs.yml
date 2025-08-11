@@ -24,6 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install sphinx
+          pip install sphinx furo m2r2 sphinx-tables
           # 若有其他依赖（如主题），在此安装
           # pip install sphinx-rtd-theme
 
